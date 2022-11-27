@@ -16,10 +16,32 @@ def verPalabraAdivinada():
     print('')
 
 def verificarLetra(letra):
-    print(letra)
+    pos = 0
+    while pos < len(palabraAAdivinar):
+        if(palabraAAdivinar[pos] == letra):
+            palabraAdivinada[pos] = letra
+        pos = pos + 1
 
+def verificarGanador():
+    pos = 0
+    ganador = True
+    while pos < len(palabraAdivinada):
+        if(palabraAdivinada[pos] == "_"):
+            ganador = False
+            break
+        pos = pos + 1
+    return ganador
+
+gano = False
 for veces in range(1, (len(palabraAAdivinar) * 2) + 1):
     letra = pedirLetra()
     verificarLetra(letra)
     verPalabraAdivinada()
+    if verificarGanador():
+        gano = True
+        break
 
+if(gano):
+    print("Haz ganado!!!")
+else:
+    print("Intentalo de nuevo!!!")
