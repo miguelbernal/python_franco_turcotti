@@ -29,19 +29,18 @@ while C_LETRAS2 != 2:
         LETRAS += BOLILLERO2[POST_LETRA]
         C_LETRAS2+=1
 # VER SI SE PUEDEN FORMAR 1 O MÁS PALABRAS DE LA LISTA, Y SI ES EL CASO; GUARDAR EN LA LISTA FORMADA
-LETRAS="ABAD"
 for I in range(N):
-    if len(DIC[I]) != len(LETRAS):
+    if len(DIC[I]) == len(LETRAS):
         if DIC[I].find(LETRAS[0]) != -1 and DIC[I].find(LETRAS[1]) != -1 and DIC[I].find(LETRAS[2]) != -1 and DIC[I].find(LETRAS[3]) != -1:
             FORMADA.append(DIC[I])
 # IMPRIMIR LAS LETRAS
 print("")
-print(LETRAS)
-print(FORMADA)
+print("LETRAS   -> ", LETRAS)
+print("FORMADAS -> ", FORMADA)
 # IMPRIMIR LAS PALABRAS FORMADAS
 if len(FORMADA) != 0:
-    print(LETRAS)
+    print("LETRAS   -> ", LETRAS)
     for K in FORMADA:
-        print(K)
+        print("FORMADAS -> ", K)
 else:
     print(f"""No se pueden formar palabras con las bolillas {LETRAS} :C""")
